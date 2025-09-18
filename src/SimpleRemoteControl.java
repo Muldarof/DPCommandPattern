@@ -1,7 +1,7 @@
 public class SimpleRemoteControl {
     Command slot;
 
-    public SimpleRemoteControl(Command command){
+    public SimpleRemoteControl(){
 
     }
 
