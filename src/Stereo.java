@@ -17,8 +17,8 @@ public class Stereo {
     public void setRadio(){
         System.out.println("Radio Active");
     }
-    public void setVolume(){
-        System.out.println("Set Volume to 11");
+    public void setVolume(int volume){
+        System.out.println("Set Volume to " + volume);
     }
 
 
