@@ -16,7 +16,5 @@ public class Main {
         remote.setCommand(garageOpen);
         remote.buttonWasPressed();
 
-
-
         }
     }
