@@ -1,3 +1,5 @@
+package Objects;
+
 public class GarageDoor {
 
     public GarageDoor(){

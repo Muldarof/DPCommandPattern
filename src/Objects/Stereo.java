@@ -1,3 +1,5 @@
+package Objects;
+
 public class Stereo {
     public Stereo() {
     }

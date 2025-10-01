@@ -1,3 +1,5 @@
+package Objects;
+
 public class Light {
     boolean status;
 

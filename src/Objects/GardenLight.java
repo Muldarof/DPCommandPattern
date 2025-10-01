@@ -1,3 +1,5 @@
+package Objects;
+
 import java.time.LocalTime;
 
 public class GardenLight {

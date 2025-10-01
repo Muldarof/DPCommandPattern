@@ -1,3 +1,5 @@
+import Objects.Stereo;
+
 public class StereoOffCommand implements Command{
     Stereo stereo;
 

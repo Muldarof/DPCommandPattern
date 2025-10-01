@@ -1,3 +1,5 @@
+import Objects.GarageDoor;
+
 public class GarageDoorUpCommand implements Command{
     GarageDoor garageDoor;
 

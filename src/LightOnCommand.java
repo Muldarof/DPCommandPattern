@@ -1,3 +1,5 @@
+import Objects.Light;
+
 public class LightOnCommand implements Command{
     Light light;
 

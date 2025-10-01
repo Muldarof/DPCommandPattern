@@ -1,3 +1,5 @@
+import Objects.Stereo;
+
 public class StereoOnWithCDCommand implements Command{
     Stereo stereo;
 
