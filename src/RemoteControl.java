@@ -1,3 +1,6 @@
+import Commands.Command;
+import Commands.noCommand;
+
 public class RemoteControl {
 
     Command[] onCommands;

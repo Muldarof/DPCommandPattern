@@ -1,3 +1,5 @@
+import Commands.Command;
+
 public class SimpleRemoteControl {
     Command slot;
 

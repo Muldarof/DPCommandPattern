@@ -1,6 +1,8 @@
+package Commands;
+
 import Objects.Stereo;
 
-public class StereoOnWithCDCommand implements Command{
+public class StereoOnWithCDCommand implements Command {
     Stereo stereo;
 
     public StereoOnWithCDCommand(Stereo stereo) {

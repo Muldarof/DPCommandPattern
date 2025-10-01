@@ -1,6 +1,8 @@
+package Commands;
+
 import Objects.Light;
 
-public class LightOffCommand implements Command{
+public class LightOffCommand implements Command {
     Light light;
 
     public LightOffCommand(Light light){

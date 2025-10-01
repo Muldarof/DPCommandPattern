@@ -1,6 +1,8 @@
+package Commands;
+
 import Objects.GarageDoor;
 
-public class GarageDoorUpCommand implements Command{
+public class GarageDoorUpCommand implements Command {
     GarageDoor garageDoor;
 
     public GarageDoorUpCommand(GarageDoor garageDoor){

@@ -1,3 +1,5 @@
+import Commands.GarageDoorUpCommand;
+import Commands.LightOnCommand;
 import Objects.GarageDoor;
 import Objects.Light;
 //Have to use Java.Time because Java doesnt have an in-built time storage solution
