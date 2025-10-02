@@ -41,8 +41,17 @@ public class Main {
         GarageDoorDownCommand GarageDoorDownCommand = new GarageDoorDownCommand(GarageDoor);
         StereoOnWithCDCommand StereoOnWithCDCommand = new StereoOnWithCDCommand(Stereo);
         StereoOffCommand StereoOffCommand = new StereoOffCommand(Stereo);
+        LightOnCommand gardenLightOnCommand = new LightOnCommand(GardenLight);
+        LightOffCommand gardenLightOffCommand = new LightOffCommand(GardenLight);
+
+
         AllLightsOnCommand AllLightsOnCommand = new AllLightsOnCommand(CeilingLight, GardenLight, KitchenLight, GarageDoor);
         AllLightsOffCommand AllLightsOffCommand = new AllLightsOffCommand(CeilingLight,GardenLight,KitchenLight,GarageDoor);
+        PartyModeOnCommand partyModeOnCommand = new PartyModeOnCommand(AllLightsOnCommand, StereoOnWithCDCommand);
+        PartyModeOffCommand partyModeOffCommand = new PartyModeOffCommand(AllLightsOffCommand, StereoOffCommand);
+
+        Command[] allLightsOn = {LivingRoomLightOnCommand, KitchenLightOnCommand, };
+        MacroCommands allLights = new MacroCommands()
 
         //Remote
         RemoteControl remoteControl = new RemoteControl();
@@ -54,7 +63,7 @@ public class Main {
         remoteControl.setCommand(3,GarageDoorUpCommand, GarageDoorDownCommand);
         remoteControl.setCommand(4,StereoOnWithCDCommand, StereoOffCommand);
         remoteControl.setCommand(5,AllLightsOnCommand, AllLightsOffCommand);
-
+        remoteControl.setCommand(6, partyModeOnCommand, partyModeOffCommand);
 
     }
 }
