@@ -28,7 +28,8 @@ public class Main {
         GarageDoor GarageDoor = new GarageDoor();
         Stereo  Stereo = new Stereo();
         Light GardenLight = new Light();
-        CeilingLight CeilingLight = new CeilingLight();
+        CeilingLight ceilingLight = new CeilingLight();
+        Television tv = new Television();
 
         //Commands
         LightOnCommand LivingRoomLightOnCommand = new LightOnCommand(LivingRoomLight);
@@ -43,26 +44,31 @@ public class Main {
         StereoOffCommand StereoOffCommand = new StereoOffCommand(Stereo);
         LightOnCommand gardenLightOnCommand = new LightOnCommand(GardenLight);
         LightOffCommand gardenLightOffCommand = new LightOffCommand(GardenLight);
+        CeilingLightOnCommand ceilingLightOnCommand = new CeilingLightOnCommand(ceilingLight);
+        CeilingLightOffCommand ceilingLightOffCommand = new CeilingLightOffCommand(ceilingLight);
 
 
-        AllLightsOnCommand AllLightsOnCommand = new AllLightsOnCommand(CeilingLight, GardenLight, KitchenLight, GarageDoor);
-        AllLightsOffCommand AllLightsOffCommand = new AllLightsOffCommand(CeilingLight,GardenLight,KitchenLight,GarageDoor);
         PartyModeOnCommand partyModeOnCommand = new PartyModeOnCommand(AllLightsOnCommand, StereoOnWithCDCommand);
         PartyModeOffCommand partyModeOffCommand = new PartyModeOffCommand(AllLightsOffCommand, StereoOffCommand);
 
-        Command[] allLightsOn = {LivingRoomLightOnCommand, KitchenLightOnCommand, };
-        MacroCommands allLights = new MacroCommands()
+        Command[] allLightsOn = {LivingRoomLightOnCommand, KitchenLightOnCommand, ceilingLightOnCommand, gardenLightOnCommand};
+        Command[] allLightsOff = {LivingRoomLightOffCommand, KitchenLightOffCommand, ceilingLightOffCommand, gardenLightOffCommand};
+        MacroCommands allLightsOnMacro = new MacroCommands(allLightsOn);
+        MacroCommands allLightsOffMacro = new MacroCommands(allLightsOff);
+
+        Command[] partyOn = {LivingRoomLightOnCommand, }
+
 
         //Remote
         RemoteControl remoteControl = new RemoteControl();
 
         //Programmable Slots
-        remoteControl.setCommand(0,LivingRoomLightOnCommand,LivingRoomLightOffCommand);
+        remoteControl.setCommand(0, LivingRoomLightOnCommand,LivingRoomLightOffCommand);
         remoteControl.setCommand(1, KitchenLightOnCommand,KitchenLightOffCommand);
         remoteControl.setCommand(2, LivingRoomCeilingFanOnCommand, LivingRoomCeilingFanOffCommand);
-        remoteControl.setCommand(3,GarageDoorUpCommand, GarageDoorDownCommand);
-        remoteControl.setCommand(4,StereoOnWithCDCommand, StereoOffCommand);
-        remoteControl.setCommand(5,AllLightsOnCommand, AllLightsOffCommand);
+        remoteControl.setCommand(3, GarageDoorUpCommand, GarageDoorDownCommand);
+        remoteControl.setCommand(4, StereoOnWithCDCommand, StereoOffCommand);
+        remoteControl.setCommand(5, allLightsOnMacro, allLightsOffMacro);
         remoteControl.setCommand(6, partyModeOnCommand, partyModeOffCommand);
 
     }
