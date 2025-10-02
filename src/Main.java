@@ -1,8 +1,5 @@
 import Commands.*;
-import Objects.CeilingFan;
-import Objects.GarageDoor;
-import Objects.Light;
-import Objects.Stereo;
+import Objects.*;
 //Have to use Java.Time because Java doesnt have an in-built time storage solution
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -30,6 +27,8 @@ public class Main {
         CeilingFan LivingRoomCeilingFan = new CeilingFan();
         GarageDoor GarageDoor = new GarageDoor();
         Stereo  Stereo = new Stereo();
+        Light GardenLight = new Light();
+        CeilingLight CeilingLight = new CeilingLight();
 
         //Commands
         LightOnCommand LivingRoomLightOnCommand = new LightOnCommand(LivingRoomLight);
@@ -42,7 +41,8 @@ public class Main {
         GarageDoorDownCommand GarageDoorDownCommand = new GarageDoorDownCommand(GarageDoor);
         StereoOnWithCDCommand StereoOnWithCDCommand = new StereoOnWithCDCommand(Stereo);
         StereoOffCommand StereoOffCommand = new StereoOffCommand(Stereo);
-        AllLightsOnCommand AllLightsOnCommand = new AllLightsOnCommand(LivingRoomLight, GardenLight, KitchenLight, GarageDoor);
+        AllLightsOnCommand AllLightsOnCommand = new AllLightsOnCommand(CeilingLight, GardenLight, KitchenLight, GarageDoor);
+        AllLightsOffCommand AllLightsOffCommand = new AllLightsOffCommand(CeilingLight,GardenLight,KitchenLight,GarageDoor);
 
         //Remote
         RemoteControl remoteControl = new RemoteControl();
@@ -53,6 +53,8 @@ public class Main {
         remoteControl.setCommand(2, LivingRoomCeilingFanOnCommand, LivingRoomCeilingFanOffCommand);
         remoteControl.setCommand(3,GarageDoorUpCommand, GarageDoorDownCommand);
         remoteControl.setCommand(4,StereoOnWithCDCommand, StereoOffCommand);
+        remoteControl.setCommand(5,AllLightsOnCommand, AllLightsOffCommand);
+
 
     }
 }
