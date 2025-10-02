@@ -46,7 +46,8 @@ public class Main {
         LightOffCommand gardenLightOffCommand = new LightOffCommand(GardenLight);
         CeilingLightOnCommand ceilingLightOnCommand = new CeilingLightOnCommand(ceilingLight);
         CeilingLightOffCommand ceilingLightOffCommand = new CeilingLightOffCommand(ceilingLight);
-
+        TelevisionOnCommand tvOnCommand = new TelevisionOnCommand(tv);
+        TelevisionOffCommand tvOffCommand = new TelevisionOffCommand(tv);
 
         PartyModeOnCommand partyModeOnCommand = new PartyModeOnCommand(AllLightsOnCommand, StereoOnWithCDCommand);
         PartyModeOffCommand partyModeOffCommand = new PartyModeOffCommand(AllLightsOffCommand, StereoOffCommand);
@@ -56,7 +57,7 @@ public class Main {
         MacroCommands allLightsOnMacro = new MacroCommands(allLightsOn);
         MacroCommands allLightsOffMacro = new MacroCommands(allLightsOff);
 
-        Command[] partyOn = {LivingRoomLightOnCommand, }
+        Command[] partyOn = {LivingRoomLightOnCommand, tvOnCommand, StereoOnWithCDCommand, };
 
 
         //Remote
