@@ -42,7 +42,7 @@ public class Main {
         GarageDoorDownCommand GarageDoorDownCommand = new GarageDoorDownCommand(GarageDoor);
         StereoOnWithCDCommand StereoOnWithCDCommand = new StereoOnWithCDCommand(Stereo);
         StereoOffCommand StereoOffCommand = new StereoOffCommand(Stereo);
-
+        AllLightsOnCommand AllLightsOnCommand = new AllLightsOnCommand(LivingRoomLight, GardenLight, KitchenLight, GarageDoor);
 
         //Remote
         RemoteControl remoteControl = new RemoteControl();
