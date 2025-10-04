@@ -1,6 +1,6 @@
 import Commands.*;
 import Objects.*;
-//Have to use Java.Time because Java doesnt have an in-built time storage solution
+//Have to use Java.Time because Java doesn't have an in-built time storage solution
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -30,6 +30,7 @@ public class Main {
         Light GardenLight = new Light();
         CeilingLight ceilingLight = new CeilingLight();
         Television tv = new Television();
+        Hottub hottub = new Hottub();
 
         //Commands
         LightOnCommand LivingRoomLightOnCommand = new LightOnCommand(LivingRoomLight);
@@ -48,16 +49,18 @@ public class Main {
         CeilingLightOffCommand ceilingLightOffCommand = new CeilingLightOffCommand(ceilingLight);
         TelevisionOnCommand tvOnCommand = new TelevisionOnCommand(tv);
         TelevisionOffCommand tvOffCommand = new TelevisionOffCommand(tv);
-
-        PartyModeOnCommand partyModeOnCommand = new PartyModeOnCommand(AllLightsOnCommand, StereoOnWithCDCommand);
-        PartyModeOffCommand partyModeOffCommand = new PartyModeOffCommand(AllLightsOffCommand, StereoOffCommand);
+        HottubOnCommand hottubOnCommand = new HottubOnCommand(hottub);
+        HottubOffCommand hottubOffCommand = new HottubOffCommand(hottub);
 
         Command[] allLightsOn = {LivingRoomLightOnCommand, KitchenLightOnCommand, ceilingLightOnCommand, gardenLightOnCommand};
         Command[] allLightsOff = {LivingRoomLightOffCommand, KitchenLightOffCommand, ceilingLightOffCommand, gardenLightOffCommand};
         MacroCommands allLightsOnMacro = new MacroCommands(allLightsOn);
         MacroCommands allLightsOffMacro = new MacroCommands(allLightsOff);
 
-        Command[] partyOn = {LivingRoomLightOnCommand, tvOnCommand, StereoOnWithCDCommand, };
+        Command[] partyOn = {LivingRoomLightOnCommand, tvOnCommand, StereoOnWithCDCommand, hottubOnCommand};
+        Command[] partyOff = {LivingRoomLightOffCommand, tvOffCommand, StereoOffCommand, hottubOffCommand};
+        MacroCommands partyOnMacroCommand = new MacroCommands(partyOn);
+        MacroCommands partyOffMacroCommand = new MacroCommands(partyOff);
 
 
         //Remote
@@ -70,7 +73,7 @@ public class Main {
         remoteControl.setCommand(3, GarageDoorUpCommand, GarageDoorDownCommand);
         remoteControl.setCommand(4, StereoOnWithCDCommand, StereoOffCommand);
         remoteControl.setCommand(5, allLightsOnMacro, allLightsOffMacro);
-        remoteControl.setCommand(6, partyModeOnCommand, partyModeOffCommand);
+        remoteControl.setCommand(6, partyOnMacroCommand, partyOffMacroCommand);
 
     }
 }
