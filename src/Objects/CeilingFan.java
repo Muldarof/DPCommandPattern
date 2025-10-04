@@ -26,6 +26,8 @@ public class CeilingFan {
     public String getSpeed(){
         return fanSpeed.toString();
     }
-
+    public FanSpeed getFanSpeed(){
+        return fanSpeed;
+    }
 
 }
