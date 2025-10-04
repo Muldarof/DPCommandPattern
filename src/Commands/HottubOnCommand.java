@@ -14,4 +14,8 @@ public class HottubOnCommand implements Command{
         hottub.circulate();
         hottub.setTemperature(80);
     }
+
+    public void undo() {
+        hottub.jetsOff();
+    }
 }
