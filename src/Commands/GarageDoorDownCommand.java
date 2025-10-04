@@ -13,4 +13,9 @@ public class GarageDoorDownCommand implements Command{
         garageDoor.lightOff();
         garageDoor.down();
     }
+
+    public void undo() {
+        garageDoor.lightOn();
+        garageDoor.up();
+    }
 }

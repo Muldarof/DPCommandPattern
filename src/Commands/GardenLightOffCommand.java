@@ -12,4 +12,8 @@ public class GardenLightOffCommand implements Command{
     public void execute() {
         gardenLight.off();
     }
+
+    public void undo() {
+        gardenLight.on();
+    }
 }
